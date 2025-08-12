@@ -1,6 +1,6 @@
 {
   "name": "hindimejs",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "A programming language with a desi twist. It uses commonly used hindi words for commands.🫡",
   "main": "hindi.js",
   "bin": {
