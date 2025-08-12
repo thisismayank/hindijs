@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* HindiLang — a tiny meme language in Hindi slang
+/* HindimeJS — a tiny meme language in Hindi slang
  *
  * Syntax (whitespace-separated, one command per line):
  *   YAAR <name> <number>       # declare variable with yaar energy

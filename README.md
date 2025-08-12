@@ -1,10 +1,9 @@
-# HindiLang 🫡
+# HindimeJS 🫡
 
 > **A tiny, fun programming language in Hindi slang — for desi developers, by desi developers!**
 
-[![npm version](https://badge.fury.io/js/hindilang.svg)](https://badge.fury.io/js/hindilang)
+[![npm version](https://badge.fury.io/js/hindimejs.svg)](https://badge.fury.io/js/hindimejs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js CI](https://github.com/yourusername/hindilang/actions/workflows/node.js.yml/badge.svg)](https://github.com/yourusername/hindilang/actions/workflows/node.js.yml)
 
 Where every program is a **masti program**! 🎉
 
@@ -21,7 +20,7 @@ Where every program is a **masti program**! 🎉
 ### Installation
 
 ```bash
-npm install -g hindilang
+npm install -g hindimejs
 ```
 
 ### Your First Program
@@ -29,7 +28,7 @@ npm install -g hindilang
 Create a file called `hello.hindi`:
 
 ```hindi
-# My first HindiLang program!
+# My first HindimeJS program!
 name HAI "Desi Developer"
 BOLO "Namaste, " + name + "!"
 ```
@@ -37,7 +36,7 @@ BOLO "Namaste, " + name + "!"
 Run it:
 
 ```bash
-hindilang hello.hindi
+hindijs hello.hindi
 ```
 
 **Output:**
@@ -216,13 +215,13 @@ jab_tak sach {
 
 ```bash
 # Run a program
-hindilang program.hindi
+hindijs program.hindi
 
 # Get help
-hindilang --help
+hindijs --help
 
 # Check version
-hindilang --version
+hindijs --version
 ```
 
 ## 🛠️ Development
@@ -235,8 +234,8 @@ hindilang --version
 ### Setup
 
 ```bash
-git clone https://github.com/yourusername/hindilang.git
-cd hindilang
+git clone https://github.com/thisismayank/hindijs.git
+cd hindijs
 npm install
 npm test
 ```
@@ -244,7 +243,7 @@ npm test
 ### Project Structure
 
 ```
-hindilang/
+hindijs/
 ├── src/
 │   ├── lineTokeniser.js    # Tokenizes input
 │   ├── lineInterpreter.js  # Interprets commands
@@ -258,7 +257,7 @@ hindilang/
 │   ├── demo.hindi
 │   ├── functions_demo.hindi
 │   └── control_flow_demo.hindi
-└── hindilang.js           # Main entry point
+└── hindi.js               # Main entry point
 ```
 
 ## 🤝 Contributing
@@ -290,9 +289,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/hindilang/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/hindilang/discussions)
-- **Email**: your-email@example.com
+- **Issues**: [GitHub Issues](https://github.com/thisismayank/hindijs/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/thisismayank/hindijs/discussions)
 
 ---
 
