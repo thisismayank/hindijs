@@ -1,0 +1,301 @@
+# HindiLang 🫡
+
+> **A tiny, fun programming language in Hindi slang — for desi developers, by desi developers!**
+
+[![npm version](https://badge.fury.io/js/hindilang.svg)](https://badge.fury.io/js/hindilang)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js CI](https://github.com/yourusername/hindilang/actions/workflows/node.js.yml/badge.svg)](https://github.com/yourusername/hindilang/actions/workflows/node.js.yml)
+
+Where every program is a **masti program**! 🎉
+
+## 🌟 Features
+
+- **Hindi Slang Syntax** - Write code in familiar Hindi words
+- **Simple & Fun** - Easy to learn, fun to use
+- **Full Featured** - Variables, functions, control flow, modules
+- **Cross Platform** - Works on Windows, Mac, and Linux
+- **Lightweight** - Minimal dependencies, fast execution
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+npm install -g hindilang
+```
+
+### Your First Program
+
+Create a file called `hello.hindi`:
+
+```hindi
+# My first HindiLang program!
+name HAI "Desi Developer"
+BOLO "Namaste, " + name + "!"
+```
+
+Run it:
+
+```bash
+hindilang hello.hindi
+```
+
+**Output:**
+
+```
+Namaste, Desi Developer!
+```
+
+## 📚 Language Guide
+
+### Variables & Assignment
+
+Use `HAI` for infix assignment (feels natural!):
+
+```hindi
+marks HAI 95
+name HAI "Bhai"
+flag HAI sach     # true
+empty HAI khaali  # null
+```
+
+Legacy syntax (still supported):
+
+```hindi
+YAAR score 100
+```
+
+### Math Operations
+
+```hindi
+# Basic arithmetic
+result HAI 10 + 5 * 2
+BOLO result  # 20
+
+# Power and modulo
+power HAI 2 ^ 8
+remainder HAI 17 % 5
+```
+
+### Functions
+
+Define functions with `kaam` and call them with `kaam_karo`:
+
+```hindi
+kaam greet name {
+    message HAI "Namaste, " + name + "!"
+    lotaao message
+}
+
+kaam_karo greet "Desi Developer"
+```
+
+Or use parentheses syntax:
+
+```hindi
+greet("World")
+```
+
+### Control Flow
+
+**If-Else:**
+
+```hindi
+score HAI 85
+
+agar score >= 90 {
+    BOLO "Excellent!"
+}
+nahi_to score >= 80 {
+    BOLO "Good job!"
+}
+warna {
+    BOLO "Keep trying!"
+}
+```
+
+**Loops:**
+
+```hindi
+# While loop
+i HAI 0
+jab_tak i < 5 {
+    BOLO i
+    i HAI i + 1
+}
+
+# For loop
+har_ek item in [1, 2, 3, 4, 5] {
+    BOLO "Number: " + item
+}
+```
+
+### Arrays & Data Structures
+
+```hindi
+# Create arrays
+numbers HAI [1, 2, 3, 4, 5]
+names HAI ["Amit", "Priya", "Raj"]
+
+# Access elements
+first HAI numbers[0]
+BOLO "First number: " + first
+```
+
+### Modules
+
+**Export from `math.hindi`:**
+
+```hindi
+PI HAI 3.14159
+
+kaam square x {
+    lotaao x * x
+}
+
+BHEJO PI
+BHEJO square
+```
+
+**Import in `main.hindi`:**
+
+```hindi
+lao "math.hindi"
+BOLO "Pi is: " + PI
+BOLO "Square of 5: " + square(5)
+```
+
+## 🎯 Examples
+
+### Calculator Function
+
+```hindi
+kaam calculate operation a b {
+    agar operation == "add" {
+        lotaao a + b
+    }
+    nahi_to operation == "multiply" {
+        lotaao a * b
+    }
+    warna {
+        lotaao "Invalid operation"
+    }
+}
+
+BOLO calculate("add", 10, 5)      # 15
+BOLO calculate("multiply", 4, 6)  # 24
+```
+
+### Simple Game
+
+```hindi
+# Guess the number game
+secret HAI 42
+attempts HAI 0
+
+BOLO "Guess the number between 1 and 100!"
+
+jab_tak sach {
+    attempts HAI attempts + 1
+    guess HAI 50  # In real app, get user input
+
+    agar guess == secret {
+        BOLO "Correct! You took " + attempts + " attempts."
+        bas_kar
+    }
+    nahi_to guess > secret {
+        BOLO "Too high!"
+    }
+    warna {
+        BOLO "Too low!"
+    }
+}
+```
+
+## 📦 CLI Usage
+
+```bash
+# Run a program
+hindilang program.hindi
+
+# Get help
+hindilang --help
+
+# Check version
+hindilang --version
+```
+
+## 🛠️ Development
+
+### Prerequisites
+
+- Node.js 14+
+- npm or yarn
+
+### Setup
+
+```bash
+git clone https://github.com/yourusername/hindilang.git
+cd hindilang
+npm install
+npm test
+```
+
+### Project Structure
+
+```
+hindilang/
+├── src/
+│   ├── lineTokeniser.js    # Tokenizes input
+│   ├── lineInterpreter.js  # Interprets commands
+│   ├── functionParser.js   # Handles functions
+│   └── controlParser.js    # Handles control flow
+├── lib/
+│   ├── expressionEvaluator.js
+│   ├── variableResolver.js
+│   └── ...
+├── examples/
+│   ├── demo.hindi
+│   ├── functions_demo.hindi
+│   └── control_flow_demo.hindi
+└── hindilang.js           # Main entry point
+```
+
+## 🤝 Contributing
+
+We love contributions! Here's how you can help:
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
+
+### Development Guidelines
+
+- Keep it **meme-friendly** and fun! 😄
+- Add **Hindi comments** in code
+- Write **tests** for new features
+- Update **documentation** for API changes
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Inspired by the creativity of the Indian developer community
+- Built with love for desi developers worldwide
+- Special thanks to all contributors who make this project awesome!
+
+## 📞 Support
+
+- **Issues**: [GitHub Issues](https://github.com/yourusername/hindilang/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yourusername/hindilang/discussions)
+- **Email**: your-email@example.com
+
+---
+
+**Made with ❤️ for the desi developer community**
+
+_"Coding kar raha hun, masti mein!"_ 🚀

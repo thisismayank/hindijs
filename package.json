@@ -1,0 +1,44 @@
+{
+  "name": "hindimejs",
+  "version": "1.0.0",
+  "description": "A programming language with a desi twist. It uses commonly used hindi words for commands.🫡",
+  "main": "hindi.js",
+  "bin": {
+    "hindijs": "./hindi.js"
+  },
+  "keywords": [
+    "programming-language",
+    "hindi",
+    "slang",
+    "desi",
+    "masti",
+    "fun",
+    "meme",
+    "indian"
+  ],
+  "author": "Mayank Arya",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:thisismayank/hindijs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thisismayank/hindijs/issues"
+  },
+  "homepage": "https://github.com/thisismayank/hindijs#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "test": "node hindi.js test.hindi",
+    "demo": "node hindi.js demo.hindi",
+    "repl": "node -e \"require('./hindi.js').repl()\""
+  },
+  "files": [
+    "hindi.js",
+    "README.md",
+    "LICENSE",
+    "src/",
+    "lib/"
+  ]
+}

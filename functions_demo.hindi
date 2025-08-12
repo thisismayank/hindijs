@@ -1,0 +1,59 @@
+# HindiLang Functions Demo 🫡
+# This program demonstrates the new function capabilities
+
+# Define a simple function that adds two numbers
+FUNCTION add_numbers a b {
+    YAAR result 0
+    ADD result a
+    ADD result b
+    PRINT "Sum is:"
+    PRINT result
+}
+
+# Define a function that calculates power
+FUNCTION calculate_power base exponent {
+    YAAR result 1
+    YAAR counter 0
+    # Loop to calculate power
+    MULTIPLY result base
+    ADD counter 1
+    MULTIPLY result base
+    ADD counter 1
+    MULTIPLY result base
+    ADD counter 1
+    PRINT "Power result:"
+    PRINT result
+}
+
+# Define a function that prints a greeting
+FUNCTION greet name {
+    PRINT "Namaste"
+    PRINT name
+    PRINT "Masti hai!"
+}
+
+# Test our functions
+YAAR x 10
+YAAR y 5
+
+# Call functions using kaam_karo syntax
+kaam_karo add_numbers x y
+kaam_karo calculate_power x 2
+kaam_karo greet "Desi Developer"
+
+# Call functions using parentheses syntax
+add_numbers(15, 25)
+calculate_power(2, 3)
+greet("Bhai")
+
+# Define and call a single-line function
+FUNCTION quick_multiply a b { YAAR result 0 ADD result a MULTIPLY result b PRINT result }
+kaam_karo quick_multiply 7 8
+
+# New syntax tests
+num HAI 2 + 3 * 4
+BOLO num
+BOLO (2 + 3) * 4
+BOLO khaali mila?
+
+PRINT "Functions demo complete! 🫡" 

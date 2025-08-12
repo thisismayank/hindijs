@@ -1,0 +1,8 @@
+# Simple function test
+kaam test_func a {
+    bolo "Inside function"
+    bolo a
+}
+
+bolo "Function defined"
+kaam_karo test_func 10 

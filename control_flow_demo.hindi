@@ -1,0 +1,29 @@
+# Control flow demo
+
+# agar / nahi_to / warna
+agar sach {
+  BOLO "agar: sach branch"
+}
+nahi_to jhoot {
+  BOLO "agar: nahi_to branch"
+}
+warna {
+  BOLO "agar: warna branch"
+}
+
+# while (jab_tak) until i == 6
+i HAI 0
+jab_tak (6 - i) {
+  i HAI i + 1
+  BOLO i
+}
+
+# for...of over a string
+har_ek ch in "ABCD" {
+  BOLO ch
+}
+
+# for...of over an array
+har_ek x in [1, 2, 3] {
+  BOLO x
+} 
