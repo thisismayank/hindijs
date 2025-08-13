@@ -12,6 +12,53 @@ function lineInterpreter(tokens, env, functionManager) {
 
   const head = tokens[0];
 
+  // helper: evaluate a parentheses-style function call appearing as an expression primary
+  const evaluateFuncCall = (startIndex) => {
+    const funcName = tokens[startIndex].value;
+    // Collect the tokens inside the immediate parentheses after FUNC_CALL
+    // tokens[startIndex + 1] should be LPAREN
+    let i = startIndex + 1;
+    if (!tokens[i] || tokens[i].type !== "LPAREN") {
+      throw new SyntaxError("Function call expected '('");
+    }
+    i++; // move past LPAREN
+    const inner = [];
+    let depth = 1;
+    for (; i < tokens.length; i++) {
+      const t = tokens[i];
+      if (t.type === "LPAREN") depth++;
+      else if (t.type === "RPAREN") depth--;
+      if (depth === 0) break; // matched the original LPAREN
+      inner.push(t);
+    }
+    if (depth !== 0) throw new SyntaxError("Unterminated function call");
+
+    // Split inner tokens by top-level commas into argument expressions
+    const args = [];
+    if (inner.length > 0) {
+      let current = [];
+      let nest = 0;
+      for (const t of inner) {
+        if (t.type === "LPAREN" || t.type === "LBRACK") nest++;
+        if (t.type === "RPAREN" || t.type === "RBRACK") nest--;
+        if (t.type === "COMMA" && nest === 0) {
+          if (current.length > 0) args.push(expressionEvaluator(current, env));
+          current = [];
+        } else {
+          current.push(t);
+        }
+      }
+      if (current.length > 0) args.push(expressionEvaluator(current, env));
+    }
+
+    return functionManager.executeFunction(
+      funcName,
+      args,
+      env,
+      lineInterpreter
+    );
+  };
+
   // Handle function calls with parentheses syntax: function_name(...)
   if (head.type === "FUNC_CALL") {
     const funcName = head.value;
@@ -40,7 +87,14 @@ function lineInterpreter(tokens, env, functionManager) {
   ) {
     const variableName = checkNameToken("HAI needs a variable name", tokens[0]);
     const exprTokens = tokens.slice(2);
-    const val = expressionEvaluator(exprTokens, env);
+    let val;
+    if (exprTokens[0] && exprTokens[0].type === "FUNC_CALL") {
+      // Support: x HAI someFunc(...)
+      // Evaluate the function call beginning at index 2 in the full tokens array
+      val = evaluateFuncCall(2);
+    } else {
+      val = expressionEvaluator(exprTokens, env);
+    }
     env.vars[variableName] = val;
     return;
   }
@@ -68,7 +122,12 @@ function lineInterpreter(tokens, env, functionManager) {
     const variableName = checkNameToken("HAI needs a variable name", nameTok);
     const exprTokens = tokens.slice(2);
     if (exprTokens.length === 0) throw new SyntaxError("HAI needs a value");
-    const val = expressionEvaluator(exprTokens, env);
+    let val;
+    if (exprTokens[0] && exprTokens[0].type === "FUNC_CALL") {
+      val = evaluateFuncCall(2);
+    } else {
+      val = expressionEvaluator(exprTokens, env);
+    }
     env.vars[variableName] = val;
     return;
   }
