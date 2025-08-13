@@ -95,6 +95,21 @@ Or use parentheses syntax:
 greet("World")
 ```
 
+#### Capturing return values
+
+Use `lotaao` inside a function to return a value, and assign it with `HAI` when calling via parentheses syntax.
+
+```hindi
+kaam greet name {
+    lotaao "Namaste, " + name + "!"
+}
+
+msg HAI greet("Mayank")
+BOLO msg
+```
+
+Note: `kaam_karo greet "Mayank"` executes the function but does not return a value you can assign.
+
 ### Control Flow
 
 **If-Else:**
