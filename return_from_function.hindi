@@ -1,0 +1,18 @@
+# Test file for npm package
+name HAI "Desi Developer"
+BOLO "Namaste, " + name + "!"
+
+# Test math
+result HAI 10 + 5 * 2
+BOLO "Result: " + result
+
+# Test function
+kaam greet person {
+    lotaao "Hello, " + person + "!"
+}
+
+kaam_karo greet "World"
+
+# assign return value of function call
+msg HAI greet("Mayank")
+BOLO msg
