@@ -1,18 +1,10 @@
-# Test file for npm package
-name HAI "Desi Developer"
-BOLO "Namaste, " + name + "!"
-
-# Test math
-result HAI 10 + 5 * 2
-BOLO "Result: " + result
-
 # Test function
-kaam greet person {
-    lotaao "Hello, " + person + "!"
+kaam greet person gap {
+    age hai 25 + gap
+    greeting hai"Hello, " + person + "!"
+    lotaao greeting + " Your age is " + age + " years!"
 }
 
-kaam_karo greet "World"
-
 # assign return value of function call
-msg HAI greet("Mayank")
+msg HAI greet("Mayank", 4)
 BOLO msg

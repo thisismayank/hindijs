@@ -46,7 +46,7 @@ function runProgram(text, filePath) {
   const functionParser = new FunctionParser();
   const functionManager = functionParser.getFunctionManager();
   const controlParser = new ControlParser();
-  const lines = text.split(/\r?\n/);
+  const lines = text.trim().split(/\r?\n/);
 
   for (let ln = 0; ln < lines.length; ln++) {
     const line = lines[ln];
