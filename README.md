@@ -1,11 +1,9 @@
 # HindimeJS 🫡
 
-> **A tiny, fun programming language in Hindi slang — for desi developers, by desi developers!**
+> **A tiny, fun programming language in Hindi slang — to test how a language parser works!**
 
 [![npm version](https://badge.fury.io/js/hindimejs.svg)](https://badge.fury.io/js/hindimejs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-Where every program is a **masti program**! 🎉
 
 ## 🌟 Features
 
@@ -42,7 +40,7 @@ hindijs hello.hindi
 **Output:**
 
 ```
-Namaste, Desi Developer!
+Namaste, Developer!
 ```
 
 ## 📚 Language Guide
@@ -298,9 +296,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Inspired by the creativity of the Indian developer community
-- Built with love for desi developers worldwide
-- Special thanks to all contributors who make this project awesome!
+- Part of a learning series where I want to understand the workings of the tools I use daily.
 
 ## 📞 Support
 
